@@ -24,6 +24,7 @@ def create_review(db: Session, review: ReviewCreate) -> Review:
     """
 
     sentiment: str = analisar_sentimento(review.text)
+    print(sentiment)
     sentiment_sanitize: str = sanitize_sentiment(sentiment)
     category: str = classificar_mensagem(review.text).lower()
 

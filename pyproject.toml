@@ -1,16 +1,21 @@
-[tool.pytest.ini_options]
-pythonpath = "."
-testpaths = ["tests"]
-addopts = "--doctest-modules --cov= --cov-report=term-missing"
-python_files = "test_*.py"  # Adiciona esta linha
-
-
-[tool.isort]
-profile = "black"
-line_length = 79
-
-[tool.taskipy.tasks]
-lint = "black --check --diff . && isort --check --diff ."
-correct = "black . && isort ."
-test = "pytest -s -x --cov=. -vv"
-post_test = "coverage html"
+[project]
+name = "message-anality"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "aiohttp>=3.11.16",
+    "alembic>=1.15.2",
+    "fastapi>=0.115.12",
+    "httpx>=0.28.1",
+    "numpy>=2.2.4",
+    "pandas>=2.2.3",
+    "psycopg2-binary>=2.9.10",
+    "pydantic-settings>=2.8.1",
+    "requests>=2.32.3",
+    "scikit-learn>=1.6.1",
+    "shortuuid>=1.0.13",
+    "sqlalchemy>=2.0.40",
+    "uvicorn>=0.34.1",
+]
